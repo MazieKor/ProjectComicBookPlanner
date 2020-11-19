@@ -20,26 +20,26 @@ public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    @Column //(nullable = false)
+    @Column (nullable = false)
     String title;
 //    @NotNull
 //    @ManyToOne
 //    Publisher publisher;
-//    @NotNull
-//    String category;
-//    Integer price;
-//    @Min(1)
-//    @Max(10)
-//    Integer urgency;
-//
-//    String series;
-//    String subtitle;
-//    Double issueNumber;
-//    LocalDate issueDate;
-//
+    @NotNull
+    String category;
+    Double price;
+    @Min(1)
+    @Max(10)
+    Integer urgency;
+
+    String series;
+    String subtitle;
+    Integer issueNumber;
+    LocalDate issueDate;
+
 //    boolean onlyNew;
-//    @Column(columnDefinition = "TEXT")
-//    String info;
+    @Column(columnDefinition = "TEXT")
+    String info;
 
 //    @ManyToOne
 //    Flow.Publisher publisher;

@@ -55,6 +55,19 @@
                                     </button>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        Wyświetl listę komiksów
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block btn-primary">
+                                        <a href="<c:url value="/table" />"> Przejdź </a>
+                                    </button>
+                                </td>
+                            </tr>
+
                         </table>
                         <!-- /.card-body -->
 

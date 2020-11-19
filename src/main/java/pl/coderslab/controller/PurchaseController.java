@@ -16,24 +16,36 @@ public class PurchaseController {
         this.purchaseService = purchaseService;
     }
 
-    @RequestMapping("/form")
-    public String form(){
+//    @RequestMapping("/form")
+//    public String form(){
+//
+//        return "purchaseForm";
+//    }
 
+    @RequestMapping("/form")
+    public String form(Model model){
+        Purchase purchase = new Purchase();
+        model.addAttribute("purchase", purchase);
         return "purchaseForm";
     }
 
-//    @RequestMapping("/newPurchase")
-//    public String save(@ModelAttribute Purchase purchase){
-//        purchaseService.save(purchase);
-//        return "main";
-//    }
-
     @RequestMapping("/newPurchase")
-    public String save(@RequestParam String title){
-        Purchase purchase =new Purchase();
-        purchase.setTitle(title);
+    public String save(@ModelAttribute Purchase purchase){
         purchaseService.save(purchase);
         return "main";
     }
+
+    @RequestMapping("/table")
+    public String showSavedComicBooks(){
+        return "tablePurchases";
+    }
+
+//    @RequestMapping("/newPurchase")
+//    public String save(@RequestParam String title){
+//        Purchase purchase =new Purchase();
+//        purchase.setTitle(title);
+//        purchaseService.save(purchase);
+//        return "main";
+//    }
 
 }
