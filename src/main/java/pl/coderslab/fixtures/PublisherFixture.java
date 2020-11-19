@@ -6,7 +6,7 @@ import pl.coderslab.entity.Publisher;
 import pl.coderslab.service.PublisherService;
 
 @Component
-public class PublisherFixture implements Fixture {
+public class PublisherFixture implements Fixture     {
     private PublisherService publisherService;
 
     @Autowired
