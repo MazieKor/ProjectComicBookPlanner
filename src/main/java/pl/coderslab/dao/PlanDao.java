@@ -29,5 +29,4 @@ public class PlanDao {
         entityManager.remove(entityManager.contains(plan) ? plan : entityManager.merge(plan));
     }
 
-
 }

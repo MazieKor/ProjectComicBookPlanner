@@ -51,7 +51,7 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-block btn-primary">
-                                        <a href="<c:url value="/form" />"> Przejdź </a>
+                                        <a href="<c:url value="/form"/>" style="display:block;color:black"> Przejdź </a>
                                     </button>
                                 </td>
                             </tr>
@@ -63,11 +63,34 @@
                                 </td>
                                 <td>
                                     <button type="button" class="btn btn-block btn-primary">
-                                        <a href="<c:url value="/table" />"> Przejdź </a>
+                                        <a href="<c:url value="/listToPurchase" />" style="display:block;color:black"> Przejdź </a>
                                     </button>
                                 </td>
                             </tr>
-
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        Załaduj wydawców
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block btn-primary">
+                                        <a href="<c:url value="/publishersFixtures"/>" style="display:block;color:black"> Załaduj </a>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        Załaduj sklepy
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block btn-primary">
+                                        <a href="<c:url value="/storesFixtures"/>" style="display:block;color:black"> Załaduj </a>
+                                    </button>
+                                </td>
+                            </tr>
                         </table>
                         <!-- /.card-body -->
 

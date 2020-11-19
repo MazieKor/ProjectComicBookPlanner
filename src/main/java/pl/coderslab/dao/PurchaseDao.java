@@ -6,7 +6,9 @@ import pl.coderslab.entity.Purchase;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 @Transactional
@@ -20,6 +22,11 @@ public class PurchaseDao {
 
     public Purchase findById(Integer id){
         return entityManager.find(Purchase.class, id);
+    }
+
+    public List<Purchase> findAll(){
+        Query query = entityManager.createQuery("Select purchases FROM Purchase purchases");
+        return query.getResultList();
     }
 
     public Purchase update(Purchase purchase){

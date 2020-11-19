@@ -8,6 +8,7 @@ import pl.coderslab.dao.PurchaseDao;
 import pl.coderslab.entity.Purchase;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Primary
@@ -23,6 +24,11 @@ public class PurchaseServiceDb implements PurchaseService{
     @Override
     public Purchase findById(Integer id) {
         return purchaseDao.findById(id);
+    }
+
+    @Override
+    public List<Purchase> findAll() {
+        return purchaseDao.findAll();
     }
 
     @Override

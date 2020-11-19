@@ -17,7 +17,7 @@ public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-//    String name;
+    String name;
 //    String email;
 //
 //    @ManyToMany
@@ -26,4 +26,8 @@ public class Store {
 //    @Column(columnDefinition = "TEXT")
 //    String additionalInfo;
 //
+
+    @OneToMany(mappedBy = "store")
+    List<StorePublisher> storePublisherList = new ArrayList<>();
+
 }

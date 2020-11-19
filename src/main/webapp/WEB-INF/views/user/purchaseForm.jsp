@@ -48,7 +48,14 @@
                                     <label for="issueNumber">nr tomu</label>
                                     <form:input path="issueNumber" type="number" min="0" class="form-control" id="issueNumber" placeholder="Issue/ Volume number"/>
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="publisher">Wydawca</label>
+                                    <form:select path="publisher.id" type="text" class="form-control" id="publisher"
+                                                placeholder="Enter publisher if needed">
+                                        <form:option value="null">Wybierz z listy</form:option>
+                                        <form:options items="${publishers}" itemLabel="name" itemValue="id"/>
+                                    </form:select>
+                                </div>
                                 <div class="form-group">
                                     <label for="category">Kategoria</label>
                                     <form:input path="category" type="text" class="form-control" id="category" placeholder="Enter category (American, European, Polish...)"/>
@@ -70,8 +77,8 @@
                                     <form:input path="subtitle" type="text" class="form-control" id="subtitle" placeholder="Enter subtitle of the comic book if needed"/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="additionalInfo">podtytuł</label>
-                                    <form:input path="info" type="textArea" class="form-control" id="additionalInfo" placeholder="Enter additional information"/>
+                                    <label for="additionalInfo">Dodatkowe informacje</label>
+                                    <form:textarea path="info" class="form-control" id="additionalInfo" placeholder="Enter additional information"/>
                                 </div>
 
                             </div>

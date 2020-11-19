@@ -18,12 +18,15 @@ public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-//    String name;
+    String name;
 //    @OneToMany(mappedBy = "publisher")
 //    List<Purchase> purchase = new ArrayList<>();
 
 //    @ManyToMany(mappedBy = "publisher")
-//    Map<Store, Double> discount = new HashMap<>();
+//    List<Store> storeList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "publisher")
+    List<StorePublisher> storePublisherList = new ArrayList<>();
 
 
 }

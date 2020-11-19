@@ -40,15 +40,22 @@
                         <!-- form start -->
                         <form:form action="/newPurchase" modelAttribute="purchase">
                             <div class="card-body">
-                                <div class="form-group" style="width:50%; display:inline">
+                                <div class="form-group" style="width:50%; display:inline-block">
                                     <label for="title">Tytuł</label>
                                     <form:input path="title" type="text" class="form-control" id="title" placeholder="Enter comic book title" />
                                 </div>
-                                <div class="form-group" style="width:20%; display:inline" >
-                                    <label for="issueNumber">podtytuł</label>
+                                <div class="form-group" style="width:20%; display:inline-block; margin-left: 60px">
+                                    <label for="issueNumber">nr tomu</label>
                                     <form:input path="issueNumber" type="number" min="0" class="form-control" id="issueNumber" placeholder="Issue/ Volume number"/>
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="publisher">Wydawca</label>
+                                    <form:select path="publisher.id" type="text" class="form-control" id="publisher"
+                                                placeholder="Enter publisher if needed">
+                                        <form:option value="null">Wybierz z listy</form:option>
+                                        <form:options items="${publishers}" itemLabel="name" itemValue="id"/>
+                                    </form:select>
+                                </div>
                                 <div class="form-group">
                                     <label for="category">Kategoria</label>
                                     <form:input path="category" type="text" class="form-control" id="category" placeholder="Enter category (American, European, Polish...)"/>
@@ -68,6 +75,10 @@
                                 <div class="form-group">
                                     <label for="subtitle">podtytuł</label>
                                     <form:input path="subtitle" type="text" class="form-control" id="subtitle" placeholder="Enter subtitle of the comic book if needed"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="additionalInfo">Dodatkowe informacje</label>
+                                    <form:textarea path="info" class="form-control" id="additionalInfo" placeholder="Enter additional information"/>
                                 </div>
 
                             </div>

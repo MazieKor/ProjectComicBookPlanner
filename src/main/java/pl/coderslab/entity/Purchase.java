@@ -23,8 +23,8 @@ public class Purchase {
     @Column (nullable = false)
     String title;
 //    @NotNull
-//    @ManyToOne
-//    Publisher publisher;
+    @ManyToOne
+    Publisher publisher;
     @NotNull
     String category;
     Double price;

@@ -4,23 +4,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.entity.Publisher;
 import pl.coderslab.entity.Purchase;
+import pl.coderslab.service.PublisherService;
 import pl.coderslab.service.PurchaseService;
+
+import java.util.Collection;
+import java.util.List;
 
 @Controller
 public class PurchaseController {
     private PurchaseService purchaseService;
+    private PublisherService publisherService;
 
     @Autowired
-    public PurchaseController(PurchaseService purchaseService){
+    public PurchaseController(PurchaseService purchaseService, PublisherService publisherService){
         this.purchaseService = purchaseService;
+        this.publisherService = publisherService;
     }
 
-//    @RequestMapping("/form")
-//    public String form(){
-//
-//        return "purchaseForm";
-//    }
 
     @RequestMapping("/form")
     public String form(Model model){
@@ -35,17 +37,25 @@ public class PurchaseController {
         return "main";
     }
 
-    @RequestMapping("/table")
-    public String showSavedComicBooks(){
+    @RequestMapping("/listToPurchase")
+    public String showSavedComicBooks(Model model){
+        List<Purchase> purchchaseList = purchaseService.findAll();
+        model.addAttribute("purchaseList", purchchaseList);
         return "tablePurchases";
     }
 
-//    @RequestMapping("/newPurchase")
-//    public String save(@RequestParam String title){
-//        Purchase purchase =new Purchase();
-//        purchase.setTitle(title);
-//        purchaseService.save(purchase);
-//        return "main";
-//    }
+    @GetMapping("/deletePurchase/{id}")
+    public String deleteSavedComicBook(@PathVariable Integer id){
+        Purchase purchase = purchaseService.findById(id);
+        purchaseService.delete(purchase);
+        return "redirect:/listToPurchase";
+    }
+
+
+    @ModelAttribute("publishers")
+    public Collection<Publisher> publishers() {
+        return this.publisherService.findAll();
+    }
+
 
 }
