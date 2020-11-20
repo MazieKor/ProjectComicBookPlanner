@@ -63,50 +63,14 @@
                                 </div>
 
 
-
-
-<%--                                <div class="form-group" style="width:50%; display:inline-block">--%>
-<%--                                    <label for="title">Tytuł</label>--%>
-<%--                                    <form:input path="title" type="text" class="form-control" id="title" placeholder="Enter comic book title" />--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group" style="width:20%; display:inline-block; margin-left: 60px">--%>
-<%--                                    <label for="issueNumber">nr tomu</label>--%>
-<%--                                    <form:input path="issueNumber" type="number" min="0" class="form-control" id="issueNumber" placeholder="Issue/ Volume number"/>--%>
-<%--                                </div>--%>
-<%--                                --%>
-<%--                                <div class="form-group">--%>
-<%--                                    <label for="category">Kategoria</label>--%>
-<%--                                    <form:input path="category" type="text" class="form-control" id="category" placeholder="Enter category (American, European, Polish...)"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <label for="price">Cena</label>--%>
-<%--                                    <form:input path="price" type="number" min="0" step="0.01" class="form-control" id="price" placeholder="Enter price"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <label for="urgency">Pilność zakupu</label>--%>
-<%--                                    <form:input path="urgency" type="number" min="0" max="10" class="form-control" id="urgency" placeholder="Enter how urgent is purchase of this comic book (1-10)"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <label for="series">Seria</label>--%>
-<%--                                    <form:input path="series" type="text" class="form-control" id="series" placeholder="Enter series if needed"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <label for="subtitle">podtytuł</label>--%>
-<%--                                    <form:input path="subtitle" type="text" class="form-control" id="subtitle" placeholder="Enter subtitle of the comic book if needed"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="form-group">--%>
-<%--                                    <label for="additionalInfo">Dodatkowe informacje</label>--%>
-<%--                                    <form:textarea path="info" class="form-control" id="additionalInfo" placeholder="Enter additional information"/>--%>
-<%--                                </div>--%>
-
                             </div>
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Save Discount</button>
                             </div>
                             <div class="card-footer">
-                                <button type=submit class="btn btn-primary" formaction="/newDiscount_Exit">Submit Exit</button>
+                                <button type=submit class="btn btn-primary" formaction="/newDiscount_Exit">Save discount and Exit</button>
                             </div>
                         </form:form>
 

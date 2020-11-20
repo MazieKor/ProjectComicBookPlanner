@@ -35,7 +35,14 @@ public class Purchase {
     String series;
     String subtitle;
     Integer issueNumber;
-    LocalDate issueDate;
+
+//    @Transient
+//    int year;
+//
+//    @Transient
+//    int month = 12;
+
+    LocalDate issueDate; //= LocalDate.of(year, month,1);
 
 //    boolean onlyNew;
     @Column(columnDefinition = "TEXT")

@@ -76,6 +76,14 @@
                                     <label for="subtitle">podtytuł</label>
                                     <form:input path="subtitle" type="text" class="form-control" id="subtitle" placeholder="Enter subtitle of the comic book if needed"/>
                                 </div>
+<%--                                <div class="form-group" style="width:30%; display:inline-block">--%>
+<%--                                    <label for="issueDate">rok wydania</label>--%>
+<%--                                    <form:input path="year" type="number" class="form-control" id="issueDate" placeholder="Enter issue date"/>--%>
+<%--                                </div>--%>
+<%--                                <div class="form-group" style="width:30%; display:inline-block; margin-left: 60px">--%>
+<%--                                    <label for="issueDate2">miesiąc wydania</label>--%>
+<%--                                    <form:input path="month" type="number" min="1" max="31" class="form-control" id="issueDate2" placeholder="Enter month"/>--%>
+<%--                                </div>--%>
                                 <div class="form-group">
                                     <label for="additionalInfo">Dodatkowe informacje</label>
                                     <form:textarea path="info" class="form-control" id="additionalInfo" placeholder="Enter additional information"/>
@@ -85,7 +93,10 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" formaction="/newPurchase_Exit">Save and Exit</button>
                             </div>
                         </form:form>
 

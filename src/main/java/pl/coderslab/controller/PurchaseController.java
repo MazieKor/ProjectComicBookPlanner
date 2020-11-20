@@ -34,6 +34,12 @@ public class PurchaseController {
     @RequestMapping("/newPurchase")
     public String save(@ModelAttribute Purchase purchase){
         purchaseService.save(purchase);
+        return "redirect:form";
+    }
+
+    @RequestMapping("/newPurchase_Exit")
+    public String saveAndExit(@ModelAttribute Purchase purchase){
+        purchaseService.save(purchase);
         return "main";
     }
 
@@ -49,6 +55,13 @@ public class PurchaseController {
         Purchase purchase = purchaseService.findById(id);
         purchaseService.delete(purchase);
         return "redirect:/listToPurchase";
+    }
+
+    @GetMapping("/detailsPurchase/{id}")
+    public String showDetailsOnComicBook(@PathVariable Integer id, Model model){
+        Purchase purchase = purchaseService.findById(id);
+        model.addAttribute("purchase", purchase);
+        return "detailsTable";
     }
 
 

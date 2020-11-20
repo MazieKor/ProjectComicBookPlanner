@@ -29,6 +29,14 @@ public class PurchaseDao {
         return query.getResultList();
     }
 
+    //przykład
+//    public List<Purchase> findByPublisher(){
+//        Query query = entityManager.createQuery("Select pub.name FROM Purchase purch JOIN purch.publisher pub JOIN Fetch pub.shoppublisher");
+//
+//        return (List<Purchase>) query.getResultList();
+//    }
+
+
     public Purchase update(Purchase purchase){
         return entityManager.merge(purchase);
     }

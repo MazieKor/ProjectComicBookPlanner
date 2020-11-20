@@ -11,7 +11,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Lista zakupów</h1>
+                    <h1>Ceny w poszczególnych sklepach</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -30,19 +30,17 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Pełna lista komiksów w bazie</h3>
+                            <h3 class="card-title">${purchase.title}, Cena okładkowa: ${purchase.price}</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
-                                    <th>Tytuł</th>
-                                    <th>Nr tomu</th>
-                                    <th>Cena</th>
-                                    <th>Data wydania</th>
-                                    <th>Wydawca</th>
-                                    <th>Akcja</th>
+                                    <th>Sklep</th>
+                                    <th>Zniżka</th>
+                                    <th>Cena po zniżce</th>
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -56,14 +54,12 @@
                                                 <td>${purchase.title}</td>
                                                 <td>${purchase.issueNumber}</td>
                                                 <td>${purchase.price}</td>
-                                                <td>${purchase.issueDate}</td>
+                                                <td>${purchase.series}</td>
                                                 <td>${purchase.publisher.getName()}</td>
-                                                <td><div><button>
-                                                    <a href="<c:url value="/detailsPurchase/${purchase.id}"/>"> Szczegóły </a>
-                                                </button> </div>
-                                                    <div><button>
+                                                <td><div><button> Szczegóły</button> </div>
+                                                    <button>
                                                         <a href="<c:url value="/deletePurchase/${purchase.id}"/>"> Skasuj </a>
-                                                    </button></div>
+                                                    </button>
                                                 </td>
                                             </tr>
                                         </c:forEach>
@@ -71,16 +67,16 @@
                                     </c:otherwise>
                                 </c:choose>
                                 </tbody>
-<%--                                <tfoot>--%>
-<%--                                <tr>--%>
-<%--                                    <th></th>--%>
-<%--                                    <th></th>--%>
-<%--                                    <th></th>--%>
-<%--                                    <th></th>--%>
-<%--                                    <th></th>--%>
-<%--                                    <th></th>--%>
-<%--                                </tr>--%>
-<%--                                </tfoot>--%>
+                                <%--                                <tfoot>--%>
+                                <%--                                <tr>--%>
+                                <%--                                    <th></th>--%>
+                                <%--                                    <th></th>--%>
+                                <%--                                    <th></th>--%>
+                                <%--                                    <th></th>--%>
+                                <%--                                    <th></th>--%>
+                                <%--                                    <th></th>--%>
+                                <%--                                </tr>--%>
+                                <%--                                </tfoot>--%>
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -100,4 +96,3 @@
 <!-- /.content-wrapper -->
 
 <%@include file="../templates/footer.jsp"%>
-

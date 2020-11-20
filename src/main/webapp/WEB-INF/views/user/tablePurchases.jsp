@@ -39,7 +39,7 @@
                                 <tr>
                                     <th>Tytuł</th>
                                     <th>Nr tomu</th>
-                                    <th>Cena</th>
+                                    <th>Cena (zł)</th>
                                     <th>Data wydania</th>
                                     <th>Wydawca</th>
                                     <th>Akcja</th>
@@ -56,12 +56,14 @@
                                                 <td>${purchase.title}</td>
                                                 <td>${purchase.issueNumber}</td>
                                                 <td>${purchase.price}</td>
-                                                <td>${purchase.series}</td>
+                                                <td>${purchase.issueDate}</td>
                                                 <td>${purchase.publisher.getName()}</td>
-                                                <td><div><button> Szczegóły</button> </div>
-                                                    <button>
+                                                <td><div><button>
+                                                    <a href="<c:url value="/detailsPurchase/${purchase.id}"/>"> Szczegóły </a>
+                                                </button> </div>
+                                                    <div><button>
                                                         <a href="<c:url value="/deletePurchase/${purchase.id}"/>"> Skasuj </a>
-                                                    </button>
+                                                    </button></div>
                                                 </td>
                                             </tr>
                                         </c:forEach>
