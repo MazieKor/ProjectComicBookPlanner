@@ -41,7 +41,7 @@
                         <form:form action="/newPurchase" modelAttribute="purchase">
                             <div class="card-body">
                                 <div class="form-group" style="width:50%; display:inline-block">
-                                    <label for="title">Tytuł</label>
+                                    <label for="title">Tytuł* (pozycja obowiązkowa)</label>
                                     <form:input path="title" type="text" class="form-control" id="title" placeholder="Enter comic book title" />
                                 </div>
                                 <div class="form-group" style="width:20%; display:inline-block; margin-left: 60px">
@@ -49,7 +49,7 @@
                                     <form:input path="issueNumber" type="number" min="0" class="form-control" id="issueNumber" placeholder="Issue/ Volume number"/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="publisher">Wydawca</label>
+                                    <label for="publisher">Wydawca* (pozycja obowiązkowa)</label>
                                     <form:select path="publisher.id" type="text" class="form-control" id="publisher"
                                                 placeholder="Enter publisher if needed">
                                         <form:option value="null">Wybierz z listy</form:option>
@@ -57,15 +57,13 @@
                                     </form:select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="category">Kategoria</label>
-                                    <form:input path="category" type="text" class="form-control" id="category" placeholder="Enter category (American, European, Polish...)"/>
+                                    <label for="price">Cena* (pozycja obowiązkowa)</label>
+                                    <form:input path="price" type="number" step="0.01" class="form-control" id="price" placeholder="Enter price"/>
+                                    <form:errors path="price" cssClass="error" />
+                                    <span id="price.errors" class="error"> Cena musi być podana </span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="price">Cena</label>
-                                    <form:input path="price" type="number" min="0" step="0.01" class="form-control" id="price" placeholder="Enter price"/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="urgency">Pilność zakupu</label>
+                                    <label for="urgency">Pilność zakupu (0-10)</label>
                                     <form:input path="urgency" type="number" min="0" max="10" class="form-control" id="urgency" placeholder="Enter how urgent is purchase of this comic book (1-10)"/>
                                 </div>
                                 <div class="form-group">
@@ -73,8 +71,12 @@
                                     <form:input path="series" type="text" class="form-control" id="series" placeholder="Enter series if needed"/>
                                 </div>
                                 <div class="form-group">
-                                    <label for="subtitle">podtytuł</label>
+                                    <label for="subtitle">Podtytuł</label>
                                     <form:input path="subtitle" type="text" class="form-control" id="subtitle" placeholder="Enter subtitle of the comic book if needed"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="category">Kategoria komiksu</label>
+                                    <form:input path="category" type="text" class="form-control" id="category" placeholder="Enter category (American, European, Polish...)"/>
                                 </div>
 <%--                                <div class="form-group" style="width:30%; display:inline-block">--%>
 <%--                                    <label for="issueDate">rok wydania</label>--%>

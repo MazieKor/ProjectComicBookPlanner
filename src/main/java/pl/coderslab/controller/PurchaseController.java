@@ -3,12 +3,15 @@ package pl.coderslab.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.Publisher;
 import pl.coderslab.entity.Purchase;
 import pl.coderslab.service.PublisherService;
 import pl.coderslab.service.PurchaseService;
 
+import javax.validation.Valid;
+import javax.validation.Validator;
 import java.util.Collection;
 import java.util.List;
 
@@ -16,11 +19,13 @@ import java.util.List;
 public class PurchaseController {
     private PurchaseService purchaseService;
     private PublisherService publisherService;
+    private Validator validator;
 
     @Autowired
-    public PurchaseController(PurchaseService purchaseService, PublisherService publisherService){
+    public PurchaseController(PurchaseService purchaseService, PublisherService publisherService, Validator validator){
         this.purchaseService = purchaseService;
         this.publisherService = publisherService;
+        this.validator = validator;
     }
 
 
@@ -32,7 +37,10 @@ public class PurchaseController {
     }
 
     @RequestMapping("/newPurchase")
-    public String save(@ModelAttribute Purchase purchase){
+    public String save(@Valid Purchase purchase, BindingResult result){
+        if(result.hasErrors()){
+            return "purchaseForm";
+        }
         purchaseService.save(purchase);
         return "redirect:form";
     }

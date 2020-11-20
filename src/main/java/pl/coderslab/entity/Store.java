@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,15 +19,16 @@ public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
+
+    @NotBlank
     String name;
-//    String email;
-//
+    @Email
+    String email;
+    @Column(columnDefinition = "TEXT")
+    String additionalInfo;
+
 //    @ManyToMany
 //    List<Publisher> publisher = new ArrayList<>();
-//
-//    @Column(columnDefinition = "TEXT")
-//    String additionalInfo;
-//
 
     @OneToMany(mappedBy = "store")
     List<StorePublisher> storePublisherList = new ArrayList<>();

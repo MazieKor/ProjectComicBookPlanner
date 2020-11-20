@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +19,8 @@ public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
+
+    @NotBlank
     String name;
 //    @OneToMany(mappedBy = "publisher")
 //    List<Purchase> purchase = new ArrayList<>();
@@ -27,6 +30,5 @@ public class Publisher {
 
     @OneToMany(mappedBy = "publisher")
     List<StorePublisher> storePublisherList = new ArrayList<>();
-
 
 }

@@ -29,6 +29,11 @@ public class StorePublisherDao {
         return query.getResultList();
     }
 
+    public List<StorePublisher> finddiscounts(){
+        Query query = entityManager.createQuery("SELECT sp FROM StorePublisher sp JOIN FETCH sp.store st JOIN fetch sp.publisher pb ORDER BY pb.name");
+        return query.getResultList();
+    }
+
     public StorePublisher update(StorePublisher storePublisher){
         return entityManager.merge(storePublisher);
     }

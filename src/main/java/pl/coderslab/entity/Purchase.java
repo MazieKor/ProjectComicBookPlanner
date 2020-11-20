@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,28 +21,27 @@ public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    @Column (nullable = false)
+
+    @NotBlank(message="Podanie tytułu jest wymagane")
     String title;
-//    @NotNull
+    Integer issueNumber;
+    @NotNull
     @ManyToOne
     Publisher publisher;
     @NotNull
-    String category;
     Double price;
-    @Min(1)
+
+    @Min(0)
     @Max(10)
     Integer urgency;
-
+    String category;
     String series;
     String subtitle;
-    Integer issueNumber;
 
 //    @Transient
 //    int year;
-//
 //    @Transient
 //    int month = 12;
-
     LocalDate issueDate; //= LocalDate.of(year, month,1);
 
 //    boolean onlyNew;

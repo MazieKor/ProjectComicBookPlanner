@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Getter
@@ -18,9 +19,11 @@ public class StorePublisher {
 
     Double discount;
 
+    @NotNull
     @ManyToOne
     Store store;
 
+    @NotNull
     @ManyToOne
     Publisher publisher;
 }

@@ -42,7 +42,7 @@
                         <form:form action="/newDiscount" method="post" modelAttribute="storePublisher">
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="publisher"> Wybierz wydawcę</label>
+                                    <label for="publisher"> Wybierz wydawcę* (pozycja obowiązkowa)</label>
                                     <form:select path="publisher.id" type="text" class="form-control" id="publisher">
                                         <form:option value="null">Wybierz wydawcę z listy</form:option>
                                         <form:options items="${publisherList}" itemLabel="name" itemValue="id"/>
@@ -50,7 +50,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="store"> Wybierz księgarnię</label>
+                                    <label for="store"> Wybierz księgarnię* (pozycja obowiązkowa)</label>
                                     <form:select path="store.id" type="text" class="form-control" id="store">
                                         <form:option value="null">Wybierz księgarnię z listy</form:option>
                                         <form:options items="${storeList}" itemLabel="name" itemValue="id"/>

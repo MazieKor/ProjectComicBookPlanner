@@ -30,6 +30,13 @@ public class PublisherDao {
         return query.getResultList();
     }
 
+    //przykład
+    public List<Publisher> findByPublisher(){
+        Query query = entityManager.createQuery("Select pub FROM Publisher pub JOIN fetch pub.storePublisherList pl");
+
+        return (List<Publisher>) query.getResultList();
+    }
+
     public Publisher update(Publisher publisher){
         return entityManager.merge(publisher);
     }

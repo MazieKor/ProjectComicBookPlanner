@@ -39,7 +39,7 @@
                                 <tr>
                                     <th>Tytuł</th>
                                     <th>Nr tomu</th>
-                                    <th>Cena</th>
+                                    <th>Cena (zł)</th>
                                     <th>Data wydania</th>
                                     <th>Wydawca</th>
                                     <th>Akcja</th>
