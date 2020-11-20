@@ -39,7 +39,7 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form:form method="post" modelAttribute="storePublisher">
+                        <form:form action="/newDiscount" method="post" modelAttribute="storePublisher">
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="publisher"> Wybierz wydawcę</label>
@@ -104,6 +104,9 @@
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                            <div class="card-footer">
+                                <button type=submit class="btn btn-primary" formaction="/newDiscount_Exit">Submit Exit</button>
                             </div>
                         </form:form>
 

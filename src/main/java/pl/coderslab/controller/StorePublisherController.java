@@ -27,7 +27,7 @@ public class StorePublisherController {
 
 
     @GetMapping("/discounts")
-    public String discounts(Model model){
+    public String prepareDiscount(Model model){
         StorePublisher storePublisher = new StorePublisher();
         model.addAttribute("storePublisher", storePublisher);
         List<Publisher> publisherList = publisherService.findAll();
@@ -37,13 +37,13 @@ public class StorePublisherController {
         return "discountsForm";
     }
 
-//    @PostMapping("/newDiscount")
-//    public String saveDiscount(@ModelAttribute StorePublisher storePublisher){
-//        storePublisherService.save(storePublisher);
-//        return "redirect:discounts";
-//    }
+    @PostMapping("/newDiscount")
+    public String saveDiscount(@ModelAttribute StorePublisher storePublisher){
+        storePublisherService.save(storePublisher);
+        return "redirect:discounts";
+    }
 
-    @PostMapping("/discounts")
+    @PostMapping("/newDiscount_Exit")
     public String saveDiscountAndExit(@ModelAttribute StorePublisher storePublisher){
         storePublisherService.save(storePublisher);
         return "main";
