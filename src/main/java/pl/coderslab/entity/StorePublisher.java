@@ -23,6 +23,4 @@ public class StorePublisher {
 
     @ManyToOne
     Publisher publisher;
-
-
 }

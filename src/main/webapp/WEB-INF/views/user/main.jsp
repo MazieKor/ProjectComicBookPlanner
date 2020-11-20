@@ -70,6 +70,20 @@
                             <tr>
                                 <td>
                                     <div class="card-body">
+                                        Dodaj zniżki
+                                    </div>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-block btn-primary">
+                                        <a href="<c:url value="/discounts" />" style="display:block;color:black"> Przejdź </a>
+                                    </button>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>
+                                    <div class="card-body">
                                         Załaduj wydawców
                                     </div>
                                 </td>

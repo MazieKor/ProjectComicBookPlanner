@@ -4,7 +4,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pl.coderslab.dao.StoreDao;
+import pl.coderslab.entity.Publisher;
 import pl.coderslab.entity.Store;
+
+import java.util.List;
 
 @Service
 @Primary
@@ -20,6 +23,11 @@ public class StoreServiceDb implements StoreService{
     @Override
     public Store findById(Integer id) {
         return storeDao.findById(id);
+    }
+
+    @Override
+    public List<Store> findAll() {
+        return storeDao.findAll();
     }
 
     @Override
